@@ -6,6 +6,7 @@ package lab6p2_carlos_moncada;
 
 import java.util.ArrayList;
 import javax.crypto.interfaces.PBEKey;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,7 +32,20 @@ public class Pantalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
+        menu = new javax.swing.JPopupMenu();
+        Eliminar = new javax.swing.JMenuItem();
+        Modificar = new javax.swing.JMenuItem();
+        agregarjuego = new javax.swing.JMenuItem();
+        eliminardialog = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaeliminar = new javax.swing.JList<>();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        modificardialog = new javax.swing.JDialog();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listamodificar = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -75,15 +89,116 @@ public class Pantalla extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        Eliminar.setText("Eliminar consola");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
+        menu.add(Eliminar);
+
+        Modificar.setText("Modificar");
+        Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarActionPerformed(evt);
+            }
+        });
+        menu.add(Modificar);
+
+        agregarjuego.setText("agregar juego");
+        agregarjuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarjuegoActionPerformed(evt);
+            }
+        });
+        menu.add(agregarjuego);
+
+        jLabel6.setText("Eliminar");
+
+        listaeliminar.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(listaeliminar);
+
+        jToggleButton3.setText("Eliminar");
+        jToggleButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton3MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout eliminardialogLayout = new javax.swing.GroupLayout(eliminardialog.getContentPane());
+        eliminardialog.getContentPane().setLayout(eliminardialogLayout);
+        eliminardialogLayout.setHorizontalGroup(
+            eliminardialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(eliminardialogLayout.createSequentialGroup()
+                .addGroup(eliminardialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(eliminardialogLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(jLabel6))
+                    .addGroup(eliminardialogLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(eliminardialogLayout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jToggleButton3)))
+                .addContainerGap(126, Short.MAX_VALUE))
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        eliminardialogLayout.setVerticalGroup(
+            eliminardialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(eliminardialogLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jToggleButton3)
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+
+        jLabel20.setText("Modificar");
+
+        listamodificar.setModel( new DefaultListModel()
+        );
+        jScrollPane3.setViewportView(listamodificar);
+
+        jButton1.setText("Modificar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout modificardialogLayout = new javax.swing.GroupLayout(modificardialog.getContentPane());
+        modificardialog.getContentPane().setLayout(modificardialogLayout);
+        modificardialogLayout.setHorizontalGroup(
+            modificardialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificardialogLayout.createSequentialGroup()
+                .addGroup(modificardialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(modificardialogLayout.createSequentialGroup()
+                        .addGap(157, 157, 157)
+                        .addComponent(jLabel20))
+                    .addGroup(modificardialogLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(modificardialogLayout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jButton1)))
+                .addContainerGap(76, Short.MAX_VALUE))
+        );
+        modificardialogLayout.setVerticalGroup(
+            modificardialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(modificardialogLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jButton1)
+                .addContainerGap(63, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -211,6 +326,9 @@ public class Pantalla extends javax.swing.JFrame {
         jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jToggleButton1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseEntered(evt);
             }
         });
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -381,23 +499,34 @@ public class Pantalla extends javax.swing.JFrame {
         } else {
             es = false;
         }
-        consolas.add(new Portatil((String) cb_pantalla.getSelectedItem(), (int) bateria.getValue(), es, txt_identificacion.getText(), txt_fabricante.getText(), (int) añosdeuso.getValue(), Double.parseDouble(precio.getText()), txt_modelo.getText()));
-        JOptionPane.showMessageDialog(this, "Agregado correctamente");
-        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
-        Object[] c = {txt_identificacion.getText(), txt_fabricante.getText(), añosdeuso.getValue(), txt_modelo.getText(), precio.getText(), null, null, null, cb_pantalla.getSelectedItem(), bateria.getValue(), this.estuche.getSelectedItem()};
-        modelo.addRow(c);
-        tabla.setModel(modelo);
+        if (validaridentificacion(txt_identificacion.getText()) == false) {
+            JOptionPane.showMessageDialog(this, "Identificacion incorrecta");
+        } else {
+            consolas.add(new Portatil((String) cb_pantalla.getSelectedItem(), (int) bateria.getValue(), es, txt_identificacion.getText(), txt_fabricante.getText(), (int) añosdeuso.getValue(), Double.parseDouble(precio.getText()), txt_modelo.getText()));
+            JOptionPane.showMessageDialog(this, "Agregado correctamente");
+            DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+            
+            Object[] c = {txt_identificacion.getText(), txt_fabricante.getText(), añosdeuso.getValue(), txt_modelo.getText(), precio.getText(), null, null, null, cb_pantalla.getSelectedItem(), bateria.getValue(), this.estuche.getSelectedItem()};
+            modelo.addRow(c);
+            tabla.setModel(modelo);
+        }
+
+
     }//GEN-LAST:event_jToggleButton1MouseClicked
 
     private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
+        if (validaridentificacion(identifiacion_estacionaria.getText()) == false) {
+            JOptionPane.showMessageDialog(this, "Identificacion incorrecta");
+        } else {
+            consolas.add(new Estacionaria((int) numero_controles.getValue(), (int) almacenamiento.getValue(), tipo_conexionestacionaria.getText(), identifiacion_estacionaria.getText(), fabricante_estacionaria.getText(), (int) añosdeuso_estacionaria.getValue(), Double.parseDouble(precio_estacionaria.getText()), modelo_estacionaria.getText()));
 
-        consolas.add(new Estacionaria((int) numero_controles.getValue(), (int) almacenamiento.getValue(), tipo_conexionestacionaria.getText(), identifiacion_estacionaria.getText(), fabricante_estacionaria.getText(), (int) añosdeuso_estacionaria.getValue(), Double.parseDouble(precio_estacionaria.getText()), modelo_estacionaria.getText()));
+            JOptionPane.showMessageDialog(this, "Agregado correctamente");
+            DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+            Object[] c = {identifiacion_estacionaria.getText(), fabricante_estacionaria.getText(), añosdeuso_estacionaria.getValue(), modelo_estacionaria.getText(), precio_estacionaria.getText(), numero_controles.getValue(), almacenamiento.getValue(), tipo_conexionestacionaria.getText(), null, null, null};
+            modelo.addRow(c);
+            tabla.setModel(modelo);
+        }
 
-        JOptionPane.showMessageDialog(this, "Agregado correctamente");
-        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
-        Object[] c = {identifiacion_estacionaria.getText(), fabricante_estacionaria.getText(), añosdeuso_estacionaria.getValue(), modelo_estacionaria.getText(), precio_estacionaria.getText(), numero_controles.getValue(), almacenamiento.getValue(), tipo_conexionestacionaria.getText(), null, null, null};
-        modelo.addRow(c);
-        tabla.setModel(modelo);
     }//GEN-LAST:event_jToggleButton2MouseClicked
 
     private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
@@ -453,10 +582,10 @@ public class Pantalla extends javax.swing.JFrame {
                     String fabricante = "";
                     int añosdeusox = 0;
                     double precio = 0;
-                    String tamañopantalla="";
-                    int bateria=0;
-                    String modelo="";
-                    boolean estuche=false;
+                    String tamañopantalla = "";
+                    int bateria = 0;
+                    String modelo = "";
+                    boolean estuche = false;
                     for (int i = 0; i < 11; i++) {
                         switch (i) {
                             case 0:
@@ -477,24 +606,166 @@ public class Pantalla extends javax.swing.JFrame {
                                 precio = (double) tabla.getValueAt(tabla.getSelectedRow(), i);
                                 break;
                             case 8:
-                             //   numerodecontroles = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                tamañopantalla = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
                                 break;
                             case 9:
-                             //   almacenamiento = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                bateria = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
                                 break;
                             case 10:
-                             //   tipoconexion = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                estuche = (boolean) tabla.getValueAt(tabla.getSelectedRow(), i);
                                 break;
 
                         }
                     }
-               //     consolaestacionaria = new Estacionaria(numerodecontroles, almacenamiento, tipoconexion, identificacion, fabricante, añosdeusox, precio, modelo);
+                    consolaportatil = new Portatil(tamañopantalla, bateria, estuche, identificacion, fabricante, añosdeusox, precio, modelo);
 
                 }
+            }
+            menu.show(tabla, evt.getX(), evt.getY());
+        }
 
+    }//GEN-LAST:event_tablaMouseClicked
+
+    private void agregarjuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarjuegoActionPerformed
+
+    }//GEN-LAST:event_agregarjuegoActionPerformed
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        DefaultListModel modelolista = (DefaultListModel) listaeliminar.getModel();
+        eliminardialog.pack();
+        eliminardialog.show(true);
+        modelolista.removeAllElements();
+        for (int i = 0; i < consolas.size(); i++) {
+            modelolista.addElement(consolas.get(i));
+        }
+        listaeliminar.setModel(modelolista);
+    }//GEN-LAST:event_EliminarActionPerformed
+
+    private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
+
+        DefaultListModel modelo = (DefaultListModel) listamodificar.getModel();
+        modelo.removeAllElements();
+        for (int i = 0; i < consolas.size(); i++) {
+            modelo.addElement(consolas.get(i));
+        }
+        listamodificar.setModel(modelo);
+        modificardialog.pack();
+        modificardialog.show(true);
+
+
+    }//GEN-LAST:event_ModificarActionPerformed
+
+    private void jToggleButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton3MouseClicked
+        if (listaeliminar.getSelectedIndex() >= 0) {
+            int indice = listaeliminar.getSelectedIndex();
+            DefaultListModel modelo = (DefaultListModel) listaeliminar.getModel();
+            modelo.remove(indice);
+            consolas.remove(indice);
+            listaeliminar.setModel(modelo);
+            DefaultTableModel modelox = (DefaultTableModel) tabla.getModel();
+            modelox.removeRow(indice);
+
+        }
+    }//GEN-LAST:event_jToggleButton3MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        if (listamodificar.getSelectedIndex() >= 0) {
+            int indice = listamodificar.getSelectedIndex();
+            DefaultListModel modelo = (DefaultListModel) listamodificar.getModel();
+            if (modelo.get(indice) instanceof Portatil) {
+                String identificacion=JOptionPane.showInputDialog("Digite la identificacion");
+                while (validaridentificacion(identificacion)==false) {                    
+                    JOptionPane.showMessageDialog(this, "Identificacion incorrecta");
+                    identificacion=JOptionPane.showInputDialog("Digite la identificacion");
+                }
+                ((Portatil)modelo.get(indice)).setIdentificacion(identificacion);
+                String fabricante=JOptionPane.showInputDialog("Digite Fabricante");
+                ((Portatil)modelo.get(indice)).setFabricante(fabricante);
+                int añosdeuso=Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
+                ((Portatil)modelo.get(indice)).setAñosdeuso(añosdeuso);
+              double  prex=Double.parseDouble(JOptionPane.showInputDialog("Digite precio"));
+                ((Portatil)modelo.get(indice)).setPrecio(prex);
+                String model=JOptionPane.showInputDialog("Digite modelo");
+                ((Portatil)modelo.get(indice)).setModelo(model);
+                String tam=JOptionPane.showInputDialog("Digite tamaño de pantalla");
+                ((Portatil)modelo.get(indice)).setTamañopantalla(tam);
+                int bat=Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
+                 ((Portatil)modelo.get(indice)).setBateria(bat);
+                 String estuch=JOptionPane.showInputDialog("Tiene estuche S/N");
+                 boolean es=false;
+                 if (estuch.equalsIgnoreCase("s")) {
+                    ((Portatil)modelo.get(indice)).setEstuche(true);
+                    es=true;
+                }else{
+                  ((Portatil)modelo.get(indice)).setEstuche(false);
+                 }
+                 
+                DefaultTableModel tablamodelo=(DefaultTableModel)tabla.getModel();
+                tablamodelo.removeRow(indice);
+                 Object[] c = {identificacion, fabricante, añosdeuso, model, prex, null, null,null, tam, bat, es};
+                tablamodelo.addRow(c);
+                tabla.setModel(tablamodelo);
+            }else{
+                
+            String identificacionest=JOptionPane.showInputDialog("Digite la identificacion");
+                while (validaridentificacion(identificacionest)==false) {                    
+                    JOptionPane.showMessageDialog(this, "Identificacion incorrecta");
+                    identificacionest=JOptionPane.showInputDialog("Digite la identificacion");
+                }
+                ((Estacionaria)modelo.get(indice)).setIdentificacion(identificacionest);
+                String fabricanteest=JOptionPane.showInputDialog("Digite Fabricante");
+                ((Estacionaria)modelo.get(indice)).setFabricante(fabricanteest);
+                int añosdeusoest=Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
+                ((Estacionaria)modelo.get(indice)).setAñosdeuso(añosdeusoest);
+              double  prexst=Double.parseDouble(JOptionPane.showInputDialog("Digite precio"));
+                ((Estacionaria)modelo.get(indice)).setPrecio(prexst);
+                String modelx=JOptionPane.showInputDialog("Digite modelo");
+                ((Estacionaria)modelo.get(indice)).setModelo(modelx);
+                String tam=JOptionPane.showInputDialog("Digite tamaño de pantalla");
+                int cantcontroles=Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de controles"));
+                ((Estacionaria)modelo.get(indice)).setNumerodecontroles(cantcontroles);
+                 int cantalma=Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de almacenamiento"));
+                ((Estacionaria)modelo.get(indice)).setNumerodecontroles(cantcontroles);
+                String conexion=JOptionPane.showInputDialog("Digite el tipo de conexion");
+                ((Estacionaria)modelo.get(indice)).setTipoconexion(conexion);
+               DefaultTableModel tablamodelo=(DefaultTableModel)tabla.getModel();  
+               tablamodelo.removeRow(indice);
+             Object[] c = {identificacionest, fabricanteest, añosdeusoest, modelx, prexst, cantcontroles, cantalma,conexion , null, null, null};
+              tablamodelo.addRow(c);
+                tabla.setModel(tablamodelo);
             }
         }
-    }//GEN-LAST:event_tablaMouseClicked
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jToggleButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1MouseEntered
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public boolean validaridentificacion(String f) {
+        boolean simon = false;
+        int contnum = 0;
+        int contletras = 0;
+        for (int i = 0; i < f.length(); i++) {
+            int codigoascii = (char) f.charAt(i);
+            if (codigoascii >= 49 && codigoascii <= 57) {
+                contnum++;
+            }
+            if ((codigoascii >= 65 && codigoascii <= 90)) {
+                contletras++;
+            }
+            if ((codigoascii >= 97 && codigoascii <= 122)) {
+                contletras++;
+            }
+
+        }
+        if (contnum == 4 && contletras == 4) {
+            simon = true;
+        }
+        return simon;
+    }
 
     /**
      * @param args the command line arguments
@@ -530,18 +801,23 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
     }
+    Portatil consolaportatil;
     ArrayList<Consola> consolas = new ArrayList<>();
     Estacionaria consolaestacionaria;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Eliminar;
+    private javax.swing.JMenuItem Modificar;
+    private javax.swing.JMenuItem agregarjuego;
     private javax.swing.JSpinner almacenamiento;
     private javax.swing.JSpinner añosdeuso;
     private javax.swing.JSpinner añosdeuso_estacionaria;
     private javax.swing.JSpinner bateria;
     private javax.swing.JComboBox<String> cb_pantalla;
+    private javax.swing.JDialog eliminardialog;
     private javax.swing.JComboBox<String> estuche;
     private javax.swing.JTextField fabricante_estacionaria;
     private javax.swing.JTextField identifiacion_estacionaria;
-    private javax.swing.JDialog jDialog1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -554,9 +830,11 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -564,10 +842,17 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JList<String> listaeliminar;
+    private javax.swing.JList<String> listamodificar;
+    private javax.swing.JPopupMenu menu;
     private javax.swing.JTextField modelo_estacionaria;
+    private javax.swing.JDialog modificardialog;
     private javax.swing.JSpinner numero_controles;
     private javax.swing.JTextField precio;
     private javax.swing.JTextField precio_estacionaria;
