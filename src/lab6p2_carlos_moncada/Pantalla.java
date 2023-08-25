@@ -46,6 +46,7 @@ public class Pantalla extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         listamodificar = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
+        agregarjogos = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -199,6 +200,17 @@ public class Pantalla extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(jButton1)
                 .addContainerGap(63, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout agregarjogosLayout = new javax.swing.GroupLayout(agregarjogos.getContentPane());
+        agregarjogos.getContentPane().setLayout(agregarjogosLayout);
+        agregarjogosLayout.setHorizontalGroup(
+            agregarjogosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        agregarjogosLayout.setVerticalGroup(
+            agregarjogosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -505,7 +517,7 @@ public class Pantalla extends javax.swing.JFrame {
             consolas.add(new Portatil((String) cb_pantalla.getSelectedItem(), (int) bateria.getValue(), es, txt_identificacion.getText(), txt_fabricante.getText(), (int) añosdeuso.getValue(), Double.parseDouble(precio.getText()), txt_modelo.getText()));
             JOptionPane.showMessageDialog(this, "Agregado correctamente");
             DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
-            
+
             Object[] c = {txt_identificacion.getText(), txt_fabricante.getText(), añosdeuso.getValue(), txt_modelo.getText(), precio.getText(), null, null, null, cb_pantalla.getSelectedItem(), bateria.getValue(), this.estuche.getSelectedItem()};
             modelo.addRow(c);
             tabla.setModel(modelo);
@@ -627,6 +639,38 @@ public class Pantalla extends javax.swing.JFrame {
     }//GEN-LAST:event_tablaMouseClicked
 
     private void agregarjuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarjuegoActionPerformed
+        if (tabla.getSelectedRow() >= 1) {
+            if (tabla.getValueAt(tabla.getSelectedRow(), 8) == null) {
+                int indice = tabla.getSelectedRow();
+                String identificacion = "";
+                String fabricante = "";
+                int añosdeuso=0;
+                String modelo="";
+                double precio=0;
+                int numerocontroless=0;
+                for (int i = 0; i < 8; i++) {
+                    switch (i) {
+                        case 1:
+                            identificacion = (String) tabla.getValueAt(indice, i);
+
+                            break;
+                        case 2:
+                            fabricante = (String) tabla.getValueAt(indice, i);
+
+                            break;
+                        case 3:añosdeuso= (int) tabla.getValueAt(indice, i);
+                        break;
+                        case 4:modelo=(String) tabla.getValueAt(indice, i);
+                        break;
+                        case 5:precio=(double) tabla.getValueAt(indice, i);
+                        break;
+                        case 6:numerocontroless=(int) tabla.getValueAt(indice, i);
+                    }
+                }
+            }
+
+        }
+
 
     }//GEN-LAST:event_agregarjuegoActionPerformed
 
@@ -673,66 +717,76 @@ public class Pantalla extends javax.swing.JFrame {
             int indice = listamodificar.getSelectedIndex();
             DefaultListModel modelo = (DefaultListModel) listamodificar.getModel();
             if (modelo.get(indice) instanceof Portatil) {
-                String identificacion=JOptionPane.showInputDialog("Digite la identificacion");
-                while (validaridentificacion(identificacion)==false) {                    
+                String identificacion = JOptionPane.showInputDialog("Digite la identificacion");
+                while (validaridentificacion(identificacion) == false) {
                     JOptionPane.showMessageDialog(this, "Identificacion incorrecta");
-                    identificacion=JOptionPane.showInputDialog("Digite la identificacion");
+                    identificacion = JOptionPane.showInputDialog("Digite la identificacion");
                 }
-                ((Portatil)modelo.get(indice)).setIdentificacion(identificacion);
-                String fabricante=JOptionPane.showInputDialog("Digite Fabricante");
-                ((Portatil)modelo.get(indice)).setFabricante(fabricante);
-                int añosdeuso=Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
-                ((Portatil)modelo.get(indice)).setAñosdeuso(añosdeuso);
-              double  prex=Double.parseDouble(JOptionPane.showInputDialog("Digite precio"));
-                ((Portatil)modelo.get(indice)).setPrecio(prex);
-                String model=JOptionPane.showInputDialog("Digite modelo");
-                ((Portatil)modelo.get(indice)).setModelo(model);
-                String tam=JOptionPane.showInputDialog("Digite tamaño de pantalla");
-                ((Portatil)modelo.get(indice)).setTamañopantalla(tam);
-                int bat=Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
-                 ((Portatil)modelo.get(indice)).setBateria(bat);
-                 String estuch=JOptionPane.showInputDialog("Tiene estuche S/N");
-                 boolean es=false;
-                 if (estuch.equalsIgnoreCase("s")) {
-                    ((Portatil)modelo.get(indice)).setEstuche(true);
-                    es=true;
-                }else{
-                  ((Portatil)modelo.get(indice)).setEstuche(false);
-                 }
-                 
-                DefaultTableModel tablamodelo=(DefaultTableModel)tabla.getModel();
+                ((Portatil) modelo.get(indice)).setIdentificacion(identificacion);
+                String fabricante = JOptionPane.showInputDialog("Digite Fabricante");
+                ((Portatil) modelo.get(indice)).setFabricante(fabricante);
+                int añosdeuso = Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
+                ((Portatil) modelo.get(indice)).setAñosdeuso(añosdeuso);
+                double prex = Double.parseDouble(JOptionPane.showInputDialog("Digite precio"));
+                ((Portatil) modelo.get(indice)).setPrecio(prex);
+                String model = JOptionPane.showInputDialog("Digite modelo");
+                ((Portatil) modelo.get(indice)).setModelo(model);
+                String tam = JOptionPane.showInputDialog("Digite tamaño de pantalla");
+                ((Portatil) modelo.get(indice)).setTamañopantalla(tam);
+                int bat = Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
+                ((Portatil) modelo.get(indice)).setBateria(bat);
+                String estuch = JOptionPane.showInputDialog("Tiene estuche S/N");
+                boolean es = false;
+                if (estuch.equalsIgnoreCase("s")) {
+                    ((Portatil) modelo.get(indice)).setEstuche(true);
+                    es = true;
+                } else {
+                    ((Portatil) modelo.get(indice)).setEstuche(false);
+                }
+
+                DefaultTableModel tablamodelo = (DefaultTableModel) tabla.getModel();
                 tablamodelo.removeRow(indice);
-                 Object[] c = {identificacion, fabricante, añosdeuso, model, prex, null, null,null, tam, bat, es};
+                Object[] c = {identificacion, fabricante, añosdeuso, model, prex, null, null, null, tam, bat, es};
                 tablamodelo.addRow(c);
                 tabla.setModel(tablamodelo);
-            }else{
-                
-            String identificacionest=JOptionPane.showInputDialog("Digite la identificacion");
-                while (validaridentificacion(identificacionest)==false) {                    
+                DefaultListModel modelolista = (DefaultListModel) listamodificar.getModel();
+                modelolista.remove(indice);
+                Portatil e = new Portatil(tam, bat, es, identificacion, fabricante, añosdeuso, prex, model);
+                modelolista.addElement(e);
+                listamodificar.setModel(modelolista);
+            } else {
+
+                String identificacionest = JOptionPane.showInputDialog("Digite la identificacion");
+                while (validaridentificacion(identificacionest) == false) {
                     JOptionPane.showMessageDialog(this, "Identificacion incorrecta");
-                    identificacionest=JOptionPane.showInputDialog("Digite la identificacion");
+                    identificacionest = JOptionPane.showInputDialog("Digite la identificacion");
                 }
-                ((Estacionaria)modelo.get(indice)).setIdentificacion(identificacionest);
-                String fabricanteest=JOptionPane.showInputDialog("Digite Fabricante");
-                ((Estacionaria)modelo.get(indice)).setFabricante(fabricanteest);
-                int añosdeusoest=Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
-                ((Estacionaria)modelo.get(indice)).setAñosdeuso(añosdeusoest);
-              double  prexst=Double.parseDouble(JOptionPane.showInputDialog("Digite precio"));
-                ((Estacionaria)modelo.get(indice)).setPrecio(prexst);
-                String modelx=JOptionPane.showInputDialog("Digite modelo");
-                ((Estacionaria)modelo.get(indice)).setModelo(modelx);
-                String tam=JOptionPane.showInputDialog("Digite tamaño de pantalla");
-                int cantcontroles=Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de controles"));
-                ((Estacionaria)modelo.get(indice)).setNumerodecontroles(cantcontroles);
-                 int cantalma=Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de almacenamiento"));
-                ((Estacionaria)modelo.get(indice)).setNumerodecontroles(cantcontroles);
-                String conexion=JOptionPane.showInputDialog("Digite el tipo de conexion");
-                ((Estacionaria)modelo.get(indice)).setTipoconexion(conexion);
-               DefaultTableModel tablamodelo=(DefaultTableModel)tabla.getModel();  
-               tablamodelo.removeRow(indice);
-             Object[] c = {identificacionest, fabricanteest, añosdeusoest, modelx, prexst, cantcontroles, cantalma,conexion , null, null, null};
-              tablamodelo.addRow(c);
+                ((Estacionaria) modelo.get(indice)).setIdentificacion(identificacionest);
+                String fabricanteest = JOptionPane.showInputDialog("Digite Fabricante");
+                ((Estacionaria) modelo.get(indice)).setFabricante(fabricanteest);
+                int añosdeusoest = Integer.parseInt(JOptionPane.showInputDialog("Digite años de uso"));
+                ((Estacionaria) modelo.get(indice)).setAñosdeuso(añosdeusoest);
+                double prexst = Double.parseDouble(JOptionPane.showInputDialog("Digite precio"));
+                ((Estacionaria) modelo.get(indice)).setPrecio(prexst);
+                String modelx = JOptionPane.showInputDialog("Digite modelo");
+                ((Estacionaria) modelo.get(indice)).setModelo(modelx);
+                String tam = JOptionPane.showInputDialog("Digite tamaño de pantalla");
+                int cantcontroles = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de controles"));
+                ((Estacionaria) modelo.get(indice)).setNumerodecontroles(cantcontroles);
+                int cantalma = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de almacenamiento"));
+                ((Estacionaria) modelo.get(indice)).setNumerodecontroles(cantcontroles);
+                String conexion = JOptionPane.showInputDialog("Digite el tipo de conexion");
+                ((Estacionaria) modelo.get(indice)).setTipoconexion(conexion);
+                DefaultTableModel tablamodelo = (DefaultTableModel) tabla.getModel();
+                tablamodelo.removeRow(indice);
+                Object[] c = {identificacionest, fabricanteest, añosdeusoest, modelx, prexst, cantcontroles, cantalma, conexion, null, null, null};
+                tablamodelo.addRow(c);
                 tabla.setModel(tablamodelo);
+                DefaultListModel modelolista = (DefaultListModel) listamodificar.getModel();
+                modelolista.remove(indice);
+                Estacionaria e = new Estacionaria(cantcontroles, cantalma, conexion, identificacionest, fabricanteest, añosdeusoest, prexst, modelx);
+                modelolista.addElement(e);
+                listamodificar.setModel(modelolista);
             }
         }
     }//GEN-LAST:event_jButton1MouseClicked
@@ -801,12 +855,15 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
     }
+    Estacionaria auxestacionaria;
+    Portatil auxportatil;
     Portatil consolaportatil;
     ArrayList<Consola> consolas = new ArrayList<>();
     Estacionaria consolaestacionaria;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Eliminar;
     private javax.swing.JMenuItem Modificar;
+    private javax.swing.JDialog agregarjogos;
     private javax.swing.JMenuItem agregarjuego;
     private javax.swing.JSpinner almacenamiento;
     private javax.swing.JSpinner añosdeuso;
