@@ -4,6 +4,11 @@
  */
 package lab6p2_carlos_moncada;
 
+import java.util.ArrayList;
+import javax.crypto.interfaces.PBEKey;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author calol
@@ -26,21 +31,470 @@ public class Pantalla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        identifiacion_estacionaria = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        fabricante_estacionaria = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        añosdeuso_estacionaria = new javax.swing.JSpinner();
+        jLabel15 = new javax.swing.JLabel();
+        precio_estacionaria = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        modelo_estacionaria = new javax.swing.JTextField();
+        numero_controles = new javax.swing.JSpinner();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        tipo_conexionestacionaria = new javax.swing.JTextField();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        almacenamiento = new javax.swing.JSpinner();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txt_identificacion = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txt_fabricante = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        añosdeuso = new javax.swing.JSpinner();
+        jLabel5 = new javax.swing.JLabel();
+        txt_modelo = new javax.swing.JTextField();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        cb_pantalla = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        bateria = new javax.swing.JSpinner();
+        jLabel8 = new javax.swing.JLabel();
+        estuche = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        precio = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel11.setText("Consola estacionaria");
+
+        jLabel12.setText("Identificacion");
+
+        jLabel13.setText("Fabricante");
+
+        jLabel14.setText("Años de uso");
+
+        jLabel15.setText("Precio");
+
+        jLabel16.setText("Modelo");
+
+        jLabel17.setText("Num controles");
+
+        jLabel18.setText("Almacenamiento");
+
+        jLabel19.setText("Tipo conexion");
+
+        jToggleButton2.setText("Agregar");
+        jToggleButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jToggleButton2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(tipo_conexionestacionaria, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(almacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(fabricante_estacionaria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                .addComponent(identifiacion_estacionaria, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel14)
+                                    .addComponent(añosdeuso_estacionaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel19))))
+                        .addGap(62, 62, 62)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel17)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel15)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(precio_estacionaria)
+                                .addComponent(jLabel16)
+                                .addComponent(modelo_estacionaria))
+                            .addComponent(numero_controles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(1177, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(identifiacion_estacionaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(precio_estacionaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fabricante_estacionaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modelo_estacionaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(añosdeuso_estacionaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numero_controles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tipo_conexionestacionaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(almacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addComponent(jToggleButton2)
+                .addGap(37, 37, 37))
+        );
+
+        jTabbedPane1.addTab("Crear consola estacionaria", jPanel1);
+
+        jLabel1.setText("Portatil");
+
+        jLabel2.setText("Identificacion");
+
+        jLabel3.setText("Fabricante");
+
+        jLabel4.setText("Años de uso");
+
+        jLabel5.setText("Modelo");
+
+        jToggleButton1.setText("Agregar");
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseClicked(evt);
+            }
+        });
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        cb_pantalla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Grande", "Mediano", "pequeño" }));
+
+        jLabel7.setText("Tamaño de pantalla");
+
+        jLabel8.setText("Bateria");
+
+        estuche.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "no" }));
+
+        jLabel9.setText("Estuche");
+
+        jLabel10.setText("Precio");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2)
+                                .addComponent(txt_identificacion)
+                                .addComponent(jLabel3)
+                                .addComponent(txt_fabricante, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                            .addComponent(jLabel4)
+                            .addComponent(añosdeuso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(estuche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel9)))
+                        .addGap(74, 74, 74)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel8)
+                            .addComponent(cb_pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(txt_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addComponent(precio)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1130, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(txt_fabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(cb_pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(añosdeuso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(estuche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addComponent(jToggleButton1)
+                .addGap(22, 22, 22))
+        );
+
+        jTabbedPane1.addTab("Crear consola  portatil", jPanel2);
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificacion", "Fabricante", "Años de uso", "Modelo", "Precio", "Numero de controles", "Almacenamiento", "Tipo de conexion", "Tamaño de pantalla", "Bateria", "Estuche"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabla);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1446, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Listar", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+        String estuche = (String) this.estuche.getSelectedItem();
+        boolean es = true;
+
+        if (estuche.equalsIgnoreCase("si")) {
+            es = true;
+        } else {
+            es = false;
+        }
+        consolas.add(new Portatil((String) cb_pantalla.getSelectedItem(), (int) bateria.getValue(), es, txt_identificacion.getText(), txt_fabricante.getText(), (int) añosdeuso.getValue(), Double.parseDouble(precio.getText()), txt_modelo.getText()));
+        JOptionPane.showMessageDialog(this, "Agregado correctamente");
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        Object[] c = {txt_identificacion.getText(), txt_fabricante.getText(), añosdeuso.getValue(), txt_modelo.getText(), precio.getText(), null, null, null, cb_pantalla.getSelectedItem(), bateria.getValue(), this.estuche.getSelectedItem()};
+        modelo.addRow(c);
+        tabla.setModel(modelo);
+    }//GEN-LAST:event_jToggleButton1MouseClicked
+
+    private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
+
+        consolas.add(new Estacionaria((int) numero_controles.getValue(), (int) almacenamiento.getValue(), tipo_conexionestacionaria.getText(), identifiacion_estacionaria.getText(), fabricante_estacionaria.getText(), (int) añosdeuso_estacionaria.getValue(), Double.parseDouble(precio_estacionaria.getText()), modelo_estacionaria.getText()));
+
+        JOptionPane.showMessageDialog(this, "Agregado correctamente");
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        Object[] c = {identifiacion_estacionaria.getText(), fabricante_estacionaria.getText(), añosdeuso_estacionaria.getValue(), modelo_estacionaria.getText(), precio_estacionaria.getText(), numero_controles.getValue(), almacenamiento.getValue(), tipo_conexionestacionaria.getText(), null, null, null};
+        modelo.addRow(c);
+        tabla.setModel(modelo);
+    }//GEN-LAST:event_jToggleButton2MouseClicked
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        if (evt.isMetaDown()) {
+            if (tabla.getSelectedRow() > 0) {
+                if (tabla.getValueAt(tabla.getSelectedRow(), 10) == null && tabla.getValueAt(tabla.getSelectedRow(), 9) == null && tabla.getValueAt(tabla.getSelectedRow(), 8) == null) {
+
+                    String identificacion = "";
+                    String fabricante = "";
+                    int añosdeusox = 0;
+                    double precio = 0;
+                    int numerodecontroles = 0;
+                    int almacenamiento = 0;
+                    String tipoconexion = "";
+                    String modelo = "";
+                    for (int i = 0; i < 11; i++) {
+                        switch (i) {
+                            case 0:
+                                identificacion = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+
+                                break;
+                            case 1:
+                                fabricante = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 2:
+                                añosdeusox = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 3:
+                                modelo = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+
+                                break;
+                            case 4:
+                                precio = (double) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 5:
+                                numerodecontroles = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 6:
+                                almacenamiento = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 7:
+                                tipoconexion = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+
+                        }
+                    }
+                    consolaestacionaria = new Estacionaria(numerodecontroles, almacenamiento, tipoconexion, identificacion, fabricante, añosdeusox, precio, modelo);
+
+                }
+                if (tabla.getValueAt(tabla.getSelectedRow(), 10) == null && tabla.getValueAt(tabla.getSelectedRow(), 9) == null && tabla.getValueAt(tabla.getSelectedRow(), 8) == null) {
+
+                    String identificacion = "";
+                    String fabricante = "";
+                    int añosdeusox = 0;
+                    double precio = 0;
+                    String tamañopantalla="";
+                    int bateria=0;
+                    String modelo="";
+                    boolean estuche=false;
+                    for (int i = 0; i < 11; i++) {
+                        switch (i) {
+                            case 0:
+                                identificacion = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+
+                                break;
+                            case 1:
+                                fabricante = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 2:
+                                añosdeusox = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 3:
+                                modelo = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+
+                                break;
+                            case 4:
+                                precio = (double) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 8:
+                             //   numerodecontroles = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 9:
+                             //   almacenamiento = (int) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+                            case 10:
+                             //   tipoconexion = (String) tabla.getValueAt(tabla.getSelectedRow(), i);
+                                break;
+
+                        }
+                    }
+               //     consolaestacionaria = new Estacionaria(numerodecontroles, almacenamiento, tipoconexion, identificacion, fabricante, añosdeusox, precio, modelo);
+
+                }
+
+            }
+        }
+    }//GEN-LAST:event_tablaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -76,7 +530,51 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
     }
-
+    ArrayList<Consola> consolas = new ArrayList<>();
+    Estacionaria consolaestacionaria;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSpinner almacenamiento;
+    private javax.swing.JSpinner añosdeuso;
+    private javax.swing.JSpinner añosdeuso_estacionaria;
+    private javax.swing.JSpinner bateria;
+    private javax.swing.JComboBox<String> cb_pantalla;
+    private javax.swing.JComboBox<String> estuche;
+    private javax.swing.JTextField fabricante_estacionaria;
+    private javax.swing.JTextField identifiacion_estacionaria;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JTextField modelo_estacionaria;
+    private javax.swing.JSpinner numero_controles;
+    private javax.swing.JTextField precio;
+    private javax.swing.JTextField precio_estacionaria;
+    private javax.swing.JTable tabla;
+    private javax.swing.JTextField tipo_conexionestacionaria;
+    private javax.swing.JTextField txt_fabricante;
+    private javax.swing.JTextField txt_identificacion;
+    private javax.swing.JTextField txt_modelo;
     // End of variables declaration//GEN-END:variables
 }

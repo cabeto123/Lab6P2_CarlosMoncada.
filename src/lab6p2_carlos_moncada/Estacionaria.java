@@ -13,12 +13,18 @@ public class Estacionaria extends Consola{
     int almacenamiento;
     String tipoconexion;
 
+    public Estacionaria() {
+       super();
+    }
+    
     public Estacionaria(int numerodecontroles, int almacenamiento, String tipoconexion, String identificacion, String fabricante, int añosdeuso, double precio, String modelo) {
         super(identificacion, fabricante, añosdeuso, precio, modelo);
         this.numerodecontroles = numerodecontroles;
         this.almacenamiento = almacenamiento;
         this.tipoconexion = tipoconexion;
     }
+
+   
 
     
 

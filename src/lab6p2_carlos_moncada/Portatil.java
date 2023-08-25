@@ -77,7 +77,7 @@ public class Portatil extends Consola{
         this.precio = precio;
     }
 
-    
+        
     public String getModelo() {
         return modelo;
     }

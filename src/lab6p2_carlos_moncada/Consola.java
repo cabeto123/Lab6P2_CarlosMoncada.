@@ -18,6 +18,9 @@ public class Consola {
  ArrayList<Juego> juegosdisponibles = new ArrayList<>();
  String modelo;
 
+    public Consola() {
+    }
+
     public Consola(String identificacion, String fabricante, int añosdeuso, double precio, String modelo) {
         this.identificacion = identificacion;
         this.fabricante = fabricante;
