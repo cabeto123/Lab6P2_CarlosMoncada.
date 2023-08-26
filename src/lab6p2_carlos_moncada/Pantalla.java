@@ -47,6 +47,10 @@ public class Pantalla extends javax.swing.JFrame {
         listamodificar = new javax.swing.JList<>();
         jButton1 = new javax.swing.JButton();
         agregarjogos = new javax.swing.JDialog();
+        jLabel21 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jogosusuario = new javax.swing.JList<>();
+        idconsola = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -202,15 +206,38 @@ public class Pantalla extends javax.swing.JFrame {
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
+        jLabel21.setText("Juegos del usuario");
+
+        jScrollPane4.setViewportView(jogosusuario);
+
+        idconsola.setEditable(false);
+
         javax.swing.GroupLayout agregarjogosLayout = new javax.swing.GroupLayout(agregarjogos.getContentPane());
         agregarjogos.getContentPane().setLayout(agregarjogosLayout);
         agregarjogosLayout.setHorizontalGroup(
             agregarjogosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(agregarjogosLayout.createSequentialGroup()
+                .addGroup(agregarjogosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(agregarjogosLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jLabel21))
+                    .addGroup(agregarjogosLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addGroup(agregarjogosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idconsola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         agregarjogosLayout.setVerticalGroup(
             agregarjogosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(agregarjogosLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel21)
+                .addGap(7, 7, 7)
+                .addComponent(idconsola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -648,26 +675,88 @@ public class Pantalla extends javax.swing.JFrame {
                 String modelo="";
                 double precio=0;
                 int numerocontroless=0;
+                int almacenamientox=0;
+                String conection="";
                 for (int i = 0; i < 8; i++) {
                     switch (i) {
-                        case 1:
+                        case 0:
                             identificacion = (String) tabla.getValueAt(indice, i);
 
                             break;
-                        case 2:
+                        case 1:
                             fabricante = (String) tabla.getValueAt(indice, i);
 
                             break;
-                        case 3:añosdeuso= (int) tabla.getValueAt(indice, i);
+                        case 2:añosdeuso= (int) tabla.getValueAt(indice, i);
                         break;
-                        case 4:modelo=(String) tabla.getValueAt(indice, i);
+                        case 3:modelo=(String) tabla.getValueAt(indice, i);
                         break;
-                        case 5:precio=(double) tabla.getValueAt(indice, i);
+                        case 4:precio=(double) tabla.getValueAt(indice, i);
                         break;
-                        case 6:numerocontroless=(int) tabla.getValueAt(indice, i);
+                        case 5:numerocontroless=(int) tabla.getValueAt(indice, i);
+                        break;
+                        case 6: almacenamientox=(int) tabla.getValueAt(indice, i);
+                        break;
+                        case 7:conection=(String) tabla.getValueAt(indice, i);
+                        break;
                     }
                 }
+                auxestacionaria= new Estacionaria(numerocontroless, almacenamientox, conection, identificacion, fabricante, añosdeuso, precio, modelo);
+            }else{
+            int indice = tabla.getSelectedRow();
+                String identificacion = "";
+                String fabricante = "";
+                int añosdeuso=0;
+                String modelo="";
+                double precio=0;
+                int numerocontroless=0;
+                int almacenamientox=0;
+                String conection="";
+                String tipodepantalla="";
+                int bateriax=0;
+                boolean estuchex=false;
+                String espo="";
+                for (int i = 0; i < 11; i++) {
+                    switch (i) {
+                        case 0:
+                            identificacion = (String) tabla.getValueAt(indice, i);
+
+                            break;
+                        case 1:
+                            fabricante = (String) tabla.getValueAt(indice, i);
+
+                            break;
+                        case 2:añosdeuso= (int) tabla.getValueAt(indice, i);
+                        break;
+                        case 3:modelo=(String) tabla.getValueAt(indice, i);
+                        break;
+                        case 4:precio=(double) tabla.getValueAt(indice, i);
+                        break;
+                        case 8:tipodepantalla=(String) tabla.getValueAt(indice, i);
+                        break;
+                        case 9:bateriax=(int)tabla.getValueAt(indice, i);
+                        break;
+                        case 10:espo=(String)tabla.getValueAt(indice, i);
+                       
+                    }
+                    
+                }
+                if (espo.equalsIgnoreCase("si")) {
+                    estuchex=true;
+                }else{
+                   estuchex=false;
+                }
+                auxportatil= new Portatil(tipodepantalla, bateriax,estuchex, identificacion, fabricante, añosdeuso, precio, modelo);
+                
+               
+            ArrayList<Juego> juegos=consolas.get(tabla.getSelectedRow()).juegosdisponibles;
+            DefaultListModel listajogo=(DefaultListModel)jogosusuario.getModel();
+                for (int i = 0; i < juegos.size(); i++) {
+                    listajogo.addElement(juegos.get(i));
+                }
+                jogosusuario.setModel(listajogo);
             }
+            
 
         }
 
@@ -855,6 +944,9 @@ public class Pantalla extends javax.swing.JFrame {
             }
         });
     }
+    boolean auxpor;
+    boolean auxest;
+    
     Estacionaria auxestacionaria;
     Portatil auxportatil;
     Portatil consolaportatil;
@@ -873,6 +965,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JDialog eliminardialog;
     private javax.swing.JComboBox<String> estuche;
     private javax.swing.JTextField fabricante_estacionaria;
+    private javax.swing.JTextField idconsola;
     private javax.swing.JTextField identifiacion_estacionaria;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -888,6 +981,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -901,10 +995,12 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JList<String> jogosusuario;
     private javax.swing.JList<String> listaeliminar;
     private javax.swing.JList<String> listamodificar;
     private javax.swing.JPopupMenu menu;
